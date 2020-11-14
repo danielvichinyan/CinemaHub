@@ -1,0 +1,281 @@
+@import "bootstrap";
+@import "footer";
+@import "navigation";
+@import "forum_threads";
+@import "carousel";
+$black: #000000;
+$dark: #001a33;
+$white: #FFFFFF;
+$highlight: #00994d;
+$light: #EDEFF5;
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  padding-top: 3.5rem;
+}
+  
+.btn {
+  color: $white;
+  padding: 0.55rem 1rem;
+  border-radius: 1.5rem;
+  min-width: 6.5rem;
+}
+  
+.btn_highlight {
+  background-color: $highlight;
+  color: $dark !important;
+  transition: background 0.4s ease-in-out;
+  
+  &:hover {
+    color: rgba(0, 153, 77, 0.8) !important;
+    background-color: rgba(0, 26, 51, 0.8) !important;
+  }
+}
+  
+.btn_dark {
+  background-color: $dark;
+  color: $highlight !important;
+  transition: background 0.4s ease-in-out;
+  
+  &:hover {
+    color: rgba(0, 26, 51, 0.8) !important;
+    background-color: rgba(0, 153, 77, 0.8);
+  }
+}
+  
+/**
+* Align buttons/texts to center.
+*/
+.btn_holder {
+  text-align: center;
+}
+
+  
+/**
+* Remove dots/numbers from lists.
+*/
+li {
+  list-style-type: none;
+}
+
+/**
+* Styling of the javascript notice function.
+*/
+#notice_wrapper {
+  width: 100%;
+  position: absolute;
+  background: rgba(0, 153, 77, 0.8);
+  z-index: 999;
+  p {
+    color: $white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 2.5rem 0;
+  }
+}
+  
+.field {
+  margin: 0.5rem 0 1.5rem;
+}
+  
+h5 {
+  font-family: Helvetica, sans-serif;
+  color: $white;
+  padding-bottom: 1rem;
+}
+  
+h6 {
+  font-family: Helvetica, sans-serif;
+  color: 999;
+  line-height: 1.5;
+  text-shadow: 1px 1px 1px $black;
+}
+  
+.floatr {
+  float: right;
+  text-align: right;
+}
+  
+.top-margin {
+  margin-top: 1rem;
+}
+  
+.bottom-margin {
+  margin-bottom: 1rem;
+}
+  
+.main-pag {
+  float: left;
+  position: relative;
+  left: 50%;
+}
+  
+.fixer-pag {
+  float: left;
+  position: relative;
+  left: -50%;
+}
+  
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+  
+.cf:before, .cf:after {
+  content: " ";
+  display: table;
+}
+  
+.cf:after {
+  clear: both;
+}
+  
+/**
+* Wrap image left to text.
+*/
+.p-left {
+  float: left;
+  margin: 0px 15px 15px 0px;
+}
+
+/* Error styling. */
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+/* Styling when using tablet, mobile device. */
+@media screen and (min-width: 760px) {
+  .mobile_visible {
+    visibility: visible;
+    clear: both;
+    text-align: center;
+    display: none;
+  }
+}
+
+/* Map styling */
+#map {
+  height: 550px;
+  width: 100%;
+}
+
+/* Map styling */
+.gm-style .gm-style-iw {
+  background-color: $white !important;
+}    
+
+/* Map styling */
+.gm-style div div div div div div div {
+  div {
+    background-color: $white !important;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  a {
+    color: $dark;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  h5 {
+    color: $dark;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  p {
+    color: $highlight;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+/* Profile picture of user. (navbar) */
+.profile-image {
+  border: 1.5px solid $highlight;
+  border-radius:100%;
+  width: 35px;
+  height: 35px;
+  background-position:center;
+  background-size:cover;
+}
+
+/* Profile picture of user. (in post) */
+.profile-image-post {
+  border: 1.5px solid $highlight;
+  border-radius:100%;
+  width: 28px;
+  height: 28px;
+  background-position:center;
+  background-size:cover;
+}
+
+/* Links to posts in Forum. */
+.post-color {
+  color: $highlight;
+  &:hover {
+    color: rgba(0, 26, 51, 0.8) !important;
+  }
+}
+
+p {
+  word-wrap: break-word;
+}
+
+/* Styling of the pagination. */
+.pagination {
+  text-align: center;
+  margin: 1rem 0 5rem 0;
+  a, .previous_page, .current, .next_page {
+    padding: 0.75rem 1rem;
+    margin: 0.25rem;
+    border-radius: .15rem;
+    line-height: 1.25;
+    text-decoration: none;
+    background: #EDEFF5;
+    font-weight: 700;
+    font-size: .7rem;
+    font-style: normal;
+    color: $dark;
+    &:hover {
+      background: $highlight;
+      color: $white;
+    }
+  }
+  .current {
+    background: $highlight;
+    color: $white;
+  }
+  .disabled {
+    color: #C0C0C0;
+    &:hover {
+      color: #C0C0C0;
+      background: #EDEFF5;
+    }
+  }
+}
+
+.main-pag {
+  float: left;
+  position: relative;
+  left: 50%;
+}
+
+.fixer-pag {
+  float: left;
+  position: relative;
+  left: -50%;
+}
+
+/* Large rounded green border */
+hr.green-line {
+  border-top: 2px solid #00994d !important;
+}

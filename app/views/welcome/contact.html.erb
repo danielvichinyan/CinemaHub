@@ -1,0 +1,44 @@
+<!-- Contact -->
+<section class="container">
+  <div class="row">
+    <div class="col-md-12" style="margin-top:5rem">
+      <div class="btn_holder"><br>
+        <!-- Title -->
+        <h2><%= t('welcome.contact.title') %></h2>
+        <h3><%= t('welcome.contact.contact_us') %></h3>
+      </div>
+    </div>
+  </div>
+    <!-- Contact Form -->
+    <%= form_tag request_contact_path, method: 'post' do %>
+  <div class="row">
+    <div class="col-md-12 btn_holder">
+      <!-- Name field -->
+      <div class="field"><br>
+        <%= label_tag :name %><br>
+        <%= text_field_tag :name, "", class: "form-control", style: "width: 30%; display: inline;" %>
+      </div>
+
+      <!-- Email field -->
+      <div class="field">
+        <%= label_tag :email %><br>
+        <%= email_field_tag :email, "", class: "form-control", style: "width: 30%; display: inline;" %>
+      </div>
+
+      <!-- Message field -->
+      <div class="field">
+        <%= label_tag :message %><br>
+        <%= text_area_tag :message, "", class: "form-control", style: "width: 35%; display: inline;" %>
+      </div>
+
+      <!-- Send Email Button -->
+      <div class="actions">
+        <div class="btn_holder"><br>
+          <%= submit_tag "Send email", class:"btn btn_dark" %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+  </div>
+</section>

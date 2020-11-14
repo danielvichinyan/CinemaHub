@@ -1,0 +1,23 @@
+<!-- If a Forum Thread is created with an image, display it -->
+<% if forum_thread.banner.present? %>
+  <%= image_tag forum_thread.banner.url, class: "thread_list_thumbnail", style: "display: inline-block;" %>
+<% else %>
+<!-- Else, display the NoImage image.-->
+  <%= image_tag "noimage.jpg", class: "thread_list_thumbnail", style: "display: inline-block;" %>
+<% end %>
+<!-- Display link to post (post subject) -->
+<%= link_to forum_thread, class: "post-color", style: "display: inline-block;" do %>
+  <h3><%= forum_thread.subject %></h3>
+<% end %>
+<!-- Display the user who posted the post. -->
+  <p style="margin-top: 0.5rem;">
+    Posted by
+      <% if forum_thread.user.avatar.present? %>
+        <%= image_tag forum_thread.user.avatar.url, class: "profile-image-post" %>
+        <%= forum_thread.user.username %>
+      <% else %>
+        <%= image_tag "missing.png", class: "profile-image-post" %>
+        <%= forum_thread.user.username %>
+      <% end %>
+  </p>  
+  <hr />

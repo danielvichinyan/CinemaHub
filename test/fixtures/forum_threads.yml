@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  subject: MyString
+  message: MyMessage
+  banner_file_name: testBanner
+  user: one
+
+two:
+  user_id: 2
+  subject: MyStringTwo
+  message: MyMessage
+  banner_file_name: testBannerTwo
+  user: two

@@ -1,0 +1,51 @@
+$white: #FFFFFF;
+$highlight: #00994d;
+.footer {
+  background-color: #001a33;
+  padding-top: 3rem;
+  width: 100%;
+  min-height: 150px;
+  line-height: 30px;
+  margin-top: 25em;
+}
+  
+.footer a {
+  border-bottom: 1px solid transparent;
+  -webkit-transition-border: border 0.2s ease;
+  transition: border 0.2s ease;
+  color: $white;
+  &:hover {
+    text-decoration: none;
+    color: $highlight !important;
+  }
+}
+
+.static-text {
+  color: $white;
+}
+  
+.border_bottom {
+  border-bottom: 0 dashed #444444;
+  margin-bottom: 1rem;
+}
+  
+.btn-outline-info {
+  border: #030303;
+  background-color: #050505;
+}
+  
+.image {
+  &:hover {
+    opacity: 0.8;
+  }
+}
+  
+.form-border {
+  border: 1px solid $highlight !important;
+}
+  
+@media (max-width: 990px) {
+  .floatr {
+    float: left !important;
+  }
+}

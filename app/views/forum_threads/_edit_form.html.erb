@@ -1,0 +1,24 @@
+<!-- Edit Form for Forum Thread -->
+<!-- Rendered in ./edit.html.erb -->
+<%= form_for @forum_thread do |f| %>
+    <!-- Forum Thread New Subject -->
+    <div class="btn_holder">
+        <%= f.text_field :subject, placeholder: "Subject", class: "form-control", style: "width: 30%; display: inline;" %>
+    </div><br>
+
+    <!-- Forum Thread New Message -->
+    <div class="btn_holder">
+        <%= f.text_area :message, placeholder: "Description", class: "form-control", style: "width: 30%; display: inline;" %>
+    </div><br>
+
+    <!-- Forum Thread New Banner -->
+    <div class="btn_holder">
+        <%= f.label :banner %><br>
+        <%= f.file_field :banner %>
+    </div><br>
+
+    <!-- Update Forum Thread Button -->
+    <div class="btn_holder">
+        <%= f.submit "Update Post", class: "btn btn_dark" %>
+    </div>
+<% end %>

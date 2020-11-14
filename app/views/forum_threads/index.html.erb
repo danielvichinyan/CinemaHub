@@ -1,0 +1,33 @@
+<!-- Forum Threads Index Page -->
+<!-- Displays all forum threads -->
+<section class="container">
+  <div class="row">
+    <div class="col-md-12" style="margin-top:5rem;">
+      <div class="btn_holder">
+        <!-- Search Forum Threads -->
+        <%= search_form_for @q do |f| %>
+        <%= f.search_field :subject_or_forum_posts_body_cont, placeholder: "Search...", class: "form-control" %>
+        <% end %>
+      </div><br>
+      <!-- The user is signed in, they can create posts. -->
+      <% if user_signed_in? %>
+      <div>
+        <%= link_to "Create Post", new_forum_thread_path, class: "btn btn_dark" %>
+      </div>
+      <% else %>
+        <!-- If not signed in, don't display create post. -->
+      <% end %>
+    </div>  
+  </div>
+  <h1 class="btn_holder"><%= t('forum_threads.index.title') %></h1>
+  <hr class="green-line"/>
+  <!-- Render all forum threads -->
+  <%= render @forum_threads %>
+</div>
+</section>
+<div class="main-pag">
+  <div class="fixer-pag">
+    <!-- Pagination -->
+    <%= will_paginate @forum_threads %>
+  </div>
+</div>

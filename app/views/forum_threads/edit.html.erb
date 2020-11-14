@@ -1,0 +1,13 @@
+<!-- Edit Forum Thread Page -->
+<section class="container">
+  <div class="row">
+    <div class="col-md-12" style="margin-top:5rem">
+      <div class="btn_holder">
+        <h1><%= t('forum_threads.edit.title') %></h1>
+      </div>
+    </div>
+  </div>
+      <!-- Renders the Forum Thread Edit Form -->
+      <!-- ./_edit_form.html.erb -->
+      <%= render 'edit_form', podcast: @forum_thread %>
+</section>

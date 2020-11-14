@@ -1,0 +1,19 @@
+<!-- Events Page -->
+<section class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="btn_holder" style="margin-top:5rem">
+        <!-- Render all events -->
+        <h2>New Activities</h2>
+        <hr class="green-line"/>
+        <%= render @events %>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="main-pag">
+  <div class="fixer-pag">
+    <!-- Pagination -->
+    <%= will_paginate @forum_threads %>
+  </div>
+</div>

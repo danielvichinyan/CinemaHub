@@ -1,0 +1,58 @@
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5><%= link_to 'CineHub', root_path, class:'navbar-brand' %></h5>
+        <h6><%= link_to 'Contact', welcome_contact_path, class:'a' %></h6>
+        <h6><%= link_to 'About', welcome_about_path, class:'a' %></h6>
+
+      </div><!-- col-md-4 -->
+
+      <div class="col-md-4">
+        <h5><%= t('footer.address') %></h5>
+        <p class="static-text">University of Surrey<br>Guildford<br>Surrey<br>GU2 7XH</p>
+      </div><!-- col-md-4 -->
+
+      <!-- Social Media -->
+      <div class="col-md-4">
+        <h5><%= t('footer.follow_us') %></h5>
+        <!-- Twitter -->
+        <h6>
+          <%= link_to "https://twitter.com/?lang=en-gb" do %>
+          <%= image_tag 'twitter.png', :size => "42x42", class: "image" %>
+          <% end %>
+        </h6>
+        <!-- Youtube -->
+        <h6>
+          <%= link_to "https://www.youtube.com/channel/UCEf1BL_OqYKu2-CVuuMoE2Q" do %>
+          <%= image_tag 'youtube.png', :size => "40x40", class: "image" %>
+          <% end %>
+        </h6>
+        <!-- Facebook -->
+        <h6>
+          <%= link_to "https://en-gb.facebook.com" do %>
+          <%= image_tag 'facebook.png', :size => "39x39", class: "image" %>
+          <% end %>
+        </h6>
+      </div><!-- col-md-4 -->
+    </div><!-- row -->
+
+    <div class="row top-margin bottom-margin">
+      <div class="col-lg-6">
+      </div><!-- col-lg-6 -->
+        <!-- SEARCH FORM -->
+    </div><!-- row -->
+  </div><!-- container -->
+
+  <section class="bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <!-- Copyright -->
+          <span class="floatr" color:"#eeeeee">2020 &copy; CineHub</span>
+        </div><!-- col-lg-6 -->
+      </div><!-- row -->
+    </div><!-- container -->
+  </section>
+</footer>

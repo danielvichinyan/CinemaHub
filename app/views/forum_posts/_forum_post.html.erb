@@ -1,0 +1,17 @@
+<%= div_for forum_post do %>
+  <p class="text-muted">Posted by
+
+  <% if forum_post.user.avatar.present? %>
+    <%= image_tag forum_post.user.avatar.url, class: "profile-image-post" %>
+  <% else %>
+    <%= image_tag "missing.png", class: "profile-image-post" %>
+  <% end %>
+
+  <%= forum_post.user.username %> 
+
+  <%= local_time_ago forum_post.created_at %> 
+
+  <% if can? :destroy, forum_post %><%= link_to 'Delete Comment', [forum_post.forum_thread, forum_post], method: :delete, remote: true %></p>
+  <% end %>
+  <p><%= forum_post.body %></p>
+<% end %>

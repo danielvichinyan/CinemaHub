@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= t('app_title') %></title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+      <%= javascript_include_tag "//maps.google.com/maps/api/js?key=AIzaSyAq96yv3MIDUWM26cc_GWtRdfZU1KQpR3c", 'application', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_pack_tag 'application' %>
+  </head> 
+
+  <body>
+    <!-- Navigation bar. -->
+    <header>
+      <%= render 'shared/navigation' %>
+    </header>
+
+      <% if alert %>
+        <div id="notice_wrapper">
+            <p class="alert"><%= alert %></p>
+          </div>
+      <% elsif notice %>
+        <div id="notice_wrapper">
+            <p class="notice"><%= notice %></p>
+        </div>
+      <% end %>
+
+
+    <%= yield %>
+
+    <!-- JavaScript alert function. (displays information according to user actions) -->
+    <script>
+      $(document).ready(function(){
+        setTimeout(function() {
+          $('#notice_wrapper').fadeOut("slow", function() {
+            $this.remove();
+          });
+        }, 4500 );
+      });
+    </script>
+
+    <!-- Footer. -->
+    <footer>
+      <%= render 'shared/footer' %>
+    </footer>
+  </body>
+</html>

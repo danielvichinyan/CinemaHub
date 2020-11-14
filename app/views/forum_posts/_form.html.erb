@@ -1,0 +1,9 @@
+<%= form_for [@forum_thread, @forum_post] do |f| %>
+  <div class="btn_holder">
+    <%= f.text_area :body, placeholder: "Add a comment...", rows: 10, class: "form-control" %>
+  </div><br>
+
+  <div style="text-align: left;">
+    <%= f.submit "Add comment", class: "btn btn_dark" %>
+  </div>
+<% end %>

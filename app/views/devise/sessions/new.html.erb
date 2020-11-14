@@ -1,0 +1,48 @@
+<section class="container">
+  <div class="row">
+    <div class="col-md-12" style="margin-top:5rem">
+      <div class="btn_holder">
+        <h2><%= t('user.sign_in.title') %></h2>
+      </div>
+    </div>
+  </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="row">
+    <div class="col-md-12 btn_holder">
+      <div class="field">
+        <!-- Login with username. -->
+        <%= f.label :login %><br />
+        <%= f.text_field :login, class: "form-control", style: "width: 30%; display: inline;" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control", style: "width: 30%; display: inline;" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+
+      <div class="actions">
+        <div class="btn_holder"><br>
+          <%= f.submit "Log in", class:"btn btn_dark" %>
+        </div>
+
+        <div class="btn_holder"><br>
+          <%= link_to "Sign In with Twitter", user_twitter_omniauth_authorize_path, class:"btn btn_highlight" %>
+        </div>
+      </div>
+  <% end %>
+  </div>
+</div>
+<div class="btn_holder"><br>
+  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+    <%= link_to "Forgot your password?", new_password_path(resource_name) %><br/>
+  <% end %>
+</div>
+</section>
+

@@ -1,0 +1,100 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  app_title: CineHub
+  app_description: A place where you find movies
+
+  welcome:
+    home:
+      title: CineHub
+      welcome: Welcome to CineHub!
+      movie_platform: The Ultimate Movie Platform!
+
+    about:
+      title: CineHub
+      about: About Us.
+
+    contact:
+      title: Contact Us.
+      contact_us: Complete the following form to get in touch with us.
+
+      name: "Name:"
+      enter_name: Enter your Name
+      email: "Email:"
+      enter_email: Enter your email address
+      message: "Message:"
+      enter_message: What do you want to say?
+      submit: Contact Us
+
+    request_contact:
+      no_email: You must supply an email address
+      email_sent: Thank you. We will be in touch shortly.
+  
+  user:
+    sign_in:
+      title: Log In
+
+    sign_up:
+      title: Sign Up
+
+    edit_user:
+      title: Edit User
+
+  find_nearby_cinemas:
+    title: Find Nearby Cinemas
+    description: Type city, address or post code.
+
+  forum_threads:
+    index:
+      title: Posts
+
+    new:
+      title: Create a new post.
+      create_success: Post was successfully created.
+    
+    edit:
+      title: Edit Post
+      delete_success: Post was successfully deleted
+      update_success: Post was updated successfully
+
+    forum_posts:
+      create_success: Your comment was successfully posted.
+      create_fail: Could not post comment!
+      delete_success: Your comment was successfully deleted.
+      delete_fail: Could not delete your comment!
+
+  carousel:
+    welcome: Welcome to CineHub!
+    join_us: Join us in our journey!
+    who_are_we: Who are we?
+    favourite_movies: Find your favourite movies.
+    find_nearby_cinemas: Find the closest cinema to you.

@@ -1,0 +1,18 @@
+<section class="container">
+  <div class="row">
+    <div class="col-md-12" style="margin-top:3rem">
+      <div class="btn_holder">
+        <h1><%= t('find_nearby_cinemas.title') %></h1><br>
+        <p><%= t('find_nearby_cinemas.description') %></p>
+        <%= form_with(url: transactions_path, local: true, method: :get) do |f| %>
+            <%= f.text_field :near, placeholder: "Search", class: "form-control", style: "width: 30%; display: inline;" %>
+            <%= f.submit "Search", class: "btn btn_dark"%>
+        <% end %><br>
+      </div>
+
+      <div>
+        <%= tag.div nil, id: 'map', data: { transactions: @transactions.to_json(methods: [:address]) } %>
+      </div>
+    </div>
+  </div>
+</section>

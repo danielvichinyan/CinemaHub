@@ -1,0 +1,33 @@
+<!-- Form for a new Forum Thread. -->
+<!-- Rendered in ./show.html.erb. -->
+<%= form_for @forum_thread do |f| %>
+    <!-- If any errors -->
+    <% if @forum_thread.errors.any? %>
+     <div id="error_explanation">
+        <% @forum_thread.errors.full_messages.each do |message| %>
+            <p><%= message %></p>
+        <% end %>
+     </div>
+    <% end %>
+    
+    <!-- Forum Thread Subject -->
+    <div class="btn_holder">
+        <%= f.text_field :subject, placeholder: "Subject", class: "form-control", style: "width: 30%; display: inline;" %>
+    </div><br>
+
+    <!-- Forum Thread Message -->
+    <div class="btn_holder">
+        <%= f.text_area :message, placeholder: "Add a description..", rows: 10, class: "form-control", style: "width: 30%; display: inline;" %>
+    </div><br>
+
+    <!-- Forum Thread Banner -->
+    <div class="btn_holder">
+        <%= f.label :banner %><br>
+        <%= f.file_field :banner %>
+    </div><br>
+
+    <!-- Create Forum Thread Button -->
+    <div class="btn_holder">
+        <%= f.submit "Create Post", class: "btn btn_dark" %>
+    </div>
+<% end %>

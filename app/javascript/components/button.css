@@ -1,0 +1,51 @@
+/* Provides styles for the Movie Page. */
+
+/* Button style. */
+.btn {
+    color: #FFFFFF;;
+    padding: 0.55rem 1rem;
+    border-radius: 1.5rem;
+    min-width: 6.5rem;
+}
+
+/* Button with highlight color. */
+.btn_highlight {
+    background-color: #00994d;
+    color: #001a33 !important;
+    transition: background 0.4s ease-in-out;
+}
+
+/* Button hover function. */
+button:hover {
+    color: rgba(0, 153, 77, 0.8) !important;
+    background-color: rgba(0, 26, 51, 0.8) !important;
+}
+    
+/* Button with dark color. */
+.btn_dark {
+    background-color: #001a33;
+    color: #00994d !important;
+    transition: background 0.4s ease-in-out;
+}
+
+/* Large rounded green border */
+hr.new1 {
+    border-top: 2px solid #00994d !important;
+}
+
+/**
+* Align buttons/texts to center.
+*/
+.btn_holder {
+    text-align: center;
+}
+
+/**
+* Align buttons/texts to center.
+*/
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;  
+}

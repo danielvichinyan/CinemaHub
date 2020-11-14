@@ -1,0 +1,25 @@
+<section class="container">
+  <div class="row">
+    <div class="col-md-12" style="margin-top:5rem">
+      <div class="btn_holder">
+        <h2>Forgot your password?</h2>
+      </div>
+    </div>
+  </div>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="row">
+    <div class="col-md-12 btn_holder">
+      <div class="field">
+        <%= f.label :username %><br />
+        <%= f.text_field :username %>
+      </div>
+
+      <div class="actions"><br>
+        <%= f.submit "Send me reset password instructions", class:"btn btn_dark" %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+</section>

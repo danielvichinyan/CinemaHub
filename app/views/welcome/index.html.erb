@@ -1,0 +1,34 @@
+<!-- Render the slideshow carousel at the top of the page. -->
+<%= render 'shared/slideshow' %>
+<!-- Home Page -->
+<section class="container">
+  <div class="row">
+    <div class="col-md-12" style="margin-top:3rem">
+      <div class="btn_holder">
+        <div class="mobile_visible btn_holder">
+          <%= image_tag "cinemas.jpg", style:"width:100%; border-radius: 4px;" %>
+        </div><br>  
+      </div>
+      <div class="mobile_visible btn_holder">
+        <!-- Title -->
+        <h2><%= t('welcome.home.welcome') %></h2>
+        <h2><%= t('welcome.home.movie_platform') %></h2>
+        <p>What are you waiting for? Join Us!</p>
+
+        <div class="mobile_visible btn_holder">
+          <%= link_to 'Sign Up', new_user_registration_path, class:'btn btn_dark' %>
+        </div><br><br><br>
+
+        <h3>Are you a fan of movies? Do you like going to the cinema?</h3>
+        <h4>Check out the latest movies.</h4>
+
+        <p><%= image_tag "actorsAll.jpg", style:"width:100%; border-radius: 4px;" %></p>
+        <p><%= link_to 'Movies', welcome_movies_path, class:'btn btn_dark' %></p><br><br>
+
+        <h3>What is CineHub?</h3>
+        <h4>Check out who we are.</h4>
+        <p><%= link_to 'About', welcome_about_path, class:'btn btn_dark' %></p>
+      </div>
+    </div>
+  </div>
+</section>

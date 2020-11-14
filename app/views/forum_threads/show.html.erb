@@ -1,0 +1,58 @@
+<!-- Forum Thread Show Page -->
+<!-- Displays a particular forum thread -->
+<section class="container">
+  <div class="row">
+    <div class="col-md-12" style="margin-top:3rem">
+      <div class="btn_holder">
+        <!-- Forum Thread Subject -->
+        <h1><%= @forum_thread.subject %></h1>
+        <p>
+          <!-- If a Forum Thread is created with an image, display it -->
+          <% if @forum_thread.banner.present? %>
+            <%= image_tag @forum_thread.banner.url, class: "forum_thread_thumbnail" %>
+          <% else %>
+          <!-- Else, display the NoImage image.-->
+          <%= image_tag "noimage.jpg", class: "forum_thread_thumbnail" %>
+          <% end %>
+        </p>
+        <!-- User -->
+        <p>Posted by 
+          <!-- If the user has an avatar - display it. -->
+          <% if @forum_thread.user.avatar.present? %>
+            <%= image_tag @forum_thread.user.avatar.url, class: "profile-image-post" %>
+          <% else %>
+            <!-- If the user does not have an avatar - display "missing.png" -->
+            <%= image_tag "missing.png", class: "profile-image-post" %>
+          <% end %>
+          <!-- Username of the user that has created the forum thread -->
+          <%= @forum_thread.user.username %>
+        </p>
+        <hr class="green-line"/>
+          <p><%= @forum_thread.message.html_safe %></p>
+        <div style="display: inline-block;">
+          <!-- Authorization -->
+          <!-- If the user has created that forum thread, they CAN delete it. -->
+          <% if can? :destroy, @forum_thread %><%= button_to 'Delete Post', @forum_thread, class: "btn btn_dark", method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+
+        <div style="display: inline-block;">
+          <!-- If the user has created that forum thread, they CAN edit it. -->
+          <% if can? :update, @forum_thread %><%= button_to 'Edit', edit_forum_thread_path(@forum_thread), :method => :get, class: "btn btn_highlight" %>
+          <% end %> 
+        </div>
+      </div><br>
+    </div>
+  </div>
+  <!-- Render comments for a particular forum thread. -->
+  <%= render @forum_thread.forum_posts %>
+
+  <!-- If the user is signed in - display the create comment form. -->
+  <% if user_signed_in? %>
+    <div>
+      <%= render partial: "forum_posts/form" %>
+    </div>
+  <% else %>
+      <!-- If not signed in, don't display the form for adding comment. -->
+  <% end %>
+</section>
